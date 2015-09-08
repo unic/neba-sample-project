@@ -1,0 +1,1 @@
+start "Sling-NEBA-demo" cmd.exe /D %cd%\sling /K java -XX:MaxPermSize=256M -jar %cd%\sling\org.apache.sling.launchpad-7-standalone.jar

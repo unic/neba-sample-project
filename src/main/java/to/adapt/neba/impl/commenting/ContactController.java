@@ -13,6 +13,8 @@ import java.util.Map;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 /**
+ * Demonstrates how Spring MVC and Sling cooperate when using NEBA.
+ *
  * @author Olaf Otto
  */
 @Controller

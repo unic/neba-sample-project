@@ -10,6 +10,8 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
+ * Demonstrates how annotations can be composed (meta-annotations) into new semantic annotations.
+ *
  * @author Olaf Otto
  */
 @Path("section")

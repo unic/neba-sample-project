@@ -9,6 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * This is both a resource model and serves as a {@link org.springframework.web.bind.annotation.ModelAttribute} in a spring
+ * {@link org.springframework.stereotype.Controller}.
+ *
  * @author Olaf Otto
  */
 @ResourceModel(types = "adaptto/components/contact")

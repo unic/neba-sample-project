@@ -14,8 +14,9 @@ import static org.osgi.service.event.EventConstants.EVENT_FILTER;
 import static org.osgi.service.event.EventConstants.EVENT_TOPIC;
 
 /**
- * Creates a new job when a resource is created below the contact inbox resource. Contrary to events, jobs have a guarantee of processing,
- * thus a job is more suitable to perform unreliable tasks, such as sending notification mail or invoking thirdparty APIs (e.g., twitter).
+ * Demonstrates how NEBA leverages the resource model -&gt; resource type relationship to select the most specific
+ * model when adapting to an interface. In this particular use case, the "Invalidator" may obtain a number of resources
+ * that must be invalidated - e.g. flushed from a cache - when another resource changes.
  *
  * @author Olaf Otto
  */

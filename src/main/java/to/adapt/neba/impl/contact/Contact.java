@@ -1,4 +1,4 @@
-package to.adapt.neba.impl.commenting;
+package to.adapt.neba.impl.contact;
 
 import io.neba.api.annotations.Path;
 import io.neba.api.annotations.ResourceModel;
@@ -15,7 +15,7 @@ import java.util.Map;
  * @author Olaf Otto
  */
 @ResourceModel(types = "adaptto/components/contact")
-public class Comment {
+public class Contact {
     @Unmapped
     private String name, email, message;
 

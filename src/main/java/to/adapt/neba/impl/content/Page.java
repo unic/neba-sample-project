@@ -28,4 +28,8 @@ public class Page {
     public String getPath() {
         return resource.getPath();
     }
+
+    public Resource getResource() {
+        return resource;
+    }
 }

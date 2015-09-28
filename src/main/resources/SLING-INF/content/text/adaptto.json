@@ -5,7 +5,8 @@
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "adaptto/components/header",
     "title": "Hi, this is Directive",
-    "text": "A responsive HTML5 + CSS3 site template designed by HTML5 UP and released for free under the Creative Commons license."
+    "text": "A responsive HTML5 + CSS3 site template designed by HTML5 UP and released for free under the Creative Commons license.",
+    "link": "/content/adaptto"
   },
   "major": {
     "jcr:primaryType": "nt:unstructured",

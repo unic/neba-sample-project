@@ -1,4 +1,4 @@
-package to.adapt.neba.impl.commenting;
+package to.adapt.neba.impl.contact;
 
 import io.neba.api.annotations.ResourceParam;
 import org.apache.sling.event.jobs.JobManager;
@@ -24,13 +24,13 @@ public class ContactController {
 
     @RequestMapping(value = "/contact", method = POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public void add(Comment comment) {
-        Map<String, Object> properties = comment.toMap();
+    public void add(Contact contact) {
+        Map<String, Object> properties = contact.toMap();
         jobManager.addJob("adaptto/contact/request", properties);
     }
 
     @ModelAttribute
-    public Comment prepareFormModel(@ResourceParam Comment comment) {
-        return comment;
+    public Contact prepareFormModel(@ResourceParam Contact contact) {
+        return contact;
     }
 }

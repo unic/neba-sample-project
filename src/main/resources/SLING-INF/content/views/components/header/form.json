@@ -8,5 +8,8 @@
   },
   "text": {
     "type": "textarea"
+  },
+  "link": {
+    "type": "text"
   }
 }

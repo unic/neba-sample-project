@@ -3,7 +3,7 @@
 <p>${properties.text}</p>
 
 <form method="post" action="<c:url value="/bin/mvc.do/contact"/>" id="contact" data-success-path="${resource.path}.success.html">
-    <input type="hidden" name="comment" value="${resource.path}">
+    <input type="hidden" name="contact" value="${resource.path}">
     <div class="row">
         <div class="6u 12u(mobilep)">
             <input type="text" name="name" placeholder="Name" />

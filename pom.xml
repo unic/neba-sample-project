@@ -7,7 +7,8 @@
     <packaging>bundle</packaging>
 
     <description>
-        A demonstration project for features the NEBA framework for Apache Sling. This project was created as part of a presentation held at the 2015 .adaptTo Berlin conference.
+        A demonstration project for features the NEBA framework for Apache Sling. This project was created as part of a
+        presentation held at the 2015 .adaptTo Berlin conference.
     </description>
 
     <properties>
@@ -42,22 +43,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.eventadmin</artifactId>
-            <version>1.4.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.jackrabbit</groupId>
-            <artifactId>jackrabbit-jcr-commons</artifactId>
-            <version>2.10.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.jackrabbit</groupId>
-            <artifactId>jackrabbit-api</artifactId>
-            <version>2.9.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
             <version>2.2.0</version>
@@ -71,32 +56,39 @@
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.scripting.api</artifactId>
-            <version>2.1.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.jcr.api</artifactId>
-            <version>2.2.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.jcr.base</artifactId>
-            <version>2.2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.servlets.post</artifactId>
-            <version>2.3.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.event</artifactId>
             <version>3.3.14</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
+            <version>3.2.14.RELEASE_1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-web</artifactId>
+            <version>3.2.14.RELEASE_1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.neba</groupId>
+            <artifactId>io.neba.neba-api</artifactId>
+            <version>3.7.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>com.springsource.org.hibernate.validator</artifactId>
+            <version>4.2.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>com.springsource.javax.validation</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.eventadmin</artifactId>
+            <version>1.4.2</version>
         </dependency>
     </dependencies>
 
@@ -112,14 +104,13 @@
                 <configuration>
                     <instructions>
                         <Sling-Initial-Content>
-                            SLING-INF/content/text;overwrite:=true,
-                            SLING-INF/content/binary;overwrite:=false,
-                            SLING-INF/content/views;overwrite:=true
+                            SLING-INF/content/text;overwrite:=true;path:=/content,
+                            SLING-INF/content/binary;overwrite:=false;path:=/content/adaptto,
+                            SLING-INF/content/views;overwrite:=true;path:=/apps/adaptto
                         </Sling-Initial-Content>
                         <Sling-Bundle-Resources>
                             /adaptto/static/;path:=/SLING-INF/static-resources/
                         </Sling-Bundle-Resources>
-                        <Embed-Dependency>jackrabbit-jcr-commons</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
@@ -133,7 +124,6 @@
                     <slingUrl>http://${sling.host}:${sling.port}/system/console</slingUrl>
                 </configuration>
             </plugin>
-
             <!-- Generates Service Component Runtime (SCR) metadata for @components contained in the bundle -->
             <plugin>
                 <groupId>org.apache.felix</groupId>

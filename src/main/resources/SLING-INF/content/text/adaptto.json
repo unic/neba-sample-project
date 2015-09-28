@@ -45,11 +45,7 @@
   "contact": {
     "sling:resourceType": "adaptto/components/contact",
     "text": "Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.",
-    "requests": {
-      "inbox": {
-        "sling:resourceType": "adaptto/components/inbox"
-      }
-    }
+    "successmessage": "Thank you for your comment. We will get back to you!"
   },
   "login": {
     "sling:resourceType": "adaptto/components/login"

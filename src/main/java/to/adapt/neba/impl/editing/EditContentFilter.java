@@ -1,4 +1,4 @@
-package to.adapt.neba.impl;
+package to.adapt.neba.impl.editing;
 
 import org.apache.felix.scr.annotations.sling.SlingFilter;
 import org.apache.sling.api.SlingHttpServletRequest;

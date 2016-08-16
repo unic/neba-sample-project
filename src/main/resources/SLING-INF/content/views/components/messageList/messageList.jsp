@@ -7,7 +7,7 @@
 <h1>${properties.title}</h1>
 <p>${properties.description}</p>
 <form method="POST" enctype="multipart/form-data" action="${resource.path}/*">
-    <input type="hidden" name="sling:resourceType" value="adaptto/message">
+    <input type="hidden" name="sling:resourceType" value="neba-sample/message">
     <input type="hidden" name=":nameHint" value="message">
     <input type="hidden" name=":redirect" value="${resource.path}.html">
     <input type="hidden" name="_charset_" value="UTF-8" />

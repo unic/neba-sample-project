@@ -78,7 +78,7 @@
 /* Header */
 
 	#header {
-		background-image: url("/adaptto/header/image.png") !important;
+		background-image: url("/content/neba-sample/header/image.png") !important;
 		background-size: cover !important;
 		background-position: scroll !important;
 		-ms-behavior: url("css/ie/backgroundsize.min.htc");

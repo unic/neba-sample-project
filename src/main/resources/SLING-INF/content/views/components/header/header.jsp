@@ -2,6 +2,6 @@
 <!-- Header -->
 <div id="header">
     <span class="logo icon fa-paper-plane-o"></span>
-    <h1>${properties.title}</h1>
-    <p>${properties.text}</p>
+    <h1>${m.title}</h1>
+    <p>${m.text}</p>
 </div>

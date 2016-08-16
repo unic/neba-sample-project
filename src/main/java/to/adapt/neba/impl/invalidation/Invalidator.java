@@ -24,7 +24,7 @@ import static org.osgi.service.event.EventConstants.EVENT_TOPIC;
 @Component(immediate = true)
 @Properties({
         @Property(name = EVENT_TOPIC, value = TOPIC_RESOURCE_CHANGED),
-        @Property(name = EVENT_FILTER, value = "(path=/content/adaptto/*)")
+        @Property(name = EVENT_FILTER, value = "(path=/content/neba-sample/*)")
 })
 public class Invalidator implements EventHandler {
     @Reference

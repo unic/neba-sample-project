@@ -2,7 +2,6 @@ package to.adapt.neba.impl.content;
 
 import io.neba.api.annotations.ResourceModel;
 import io.neba.api.annotations.This;
-import io.neba.api.resourcemodels.Optional;
 import org.apache.sling.api.resource.Resource;
 
 import java.util.List;
@@ -10,10 +9,9 @@ import java.util.List;
 /**
  * @author Olaf Otto
  */
-@ResourceModel(types = "adaptto/components/page")
+@ResourceModel(types = "neba-sample/components/page")
 public class Page {
     private Header header;
-    private Optional<Page> child;
 
     @This
     private Resource resource;

@@ -1,9 +1,9 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>to.adapt</groupId>
-    <artifactId>to.adapt.neba</artifactId>
-    <name>adaptTo-NEBA-examples</name>
-    <version>1.0.0</version>
+    <groupId>io.neba</groupId>
+    <artifactId>io.neba.sample-project</artifactId>
+    <name>NEBA sample project</name>
+    <version>2.0.0</version>
     <packaging>bundle</packaging>
 
     <description>
@@ -12,10 +12,23 @@
     </description>
 
     <properties>
-        <sling.port>8080</sling.port>
-        <sling.host>localhost</sling.host>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>orssh-snapshots</id>
+            <snapshots><enabled>true</enabled></snapshots>
+            <releases><enabled>false</enabled></releases>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>maven-central</id>
+            <snapshots><enabled>false</enabled></snapshots>
+            <releases><enabled>true</enabled></releases>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -45,50 +58,55 @@
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
-            <version>2.2.0</version>
+            <version>2.2.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.api</artifactId>
-            <version>2.3.0</version>
+            <version>2.9.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <version>3.7.4</version>
             <groupId>org.apache.sling</groupId>
             <artifactId>org.apache.sling.event</artifactId>
-            <version>3.3.14</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
-            <version>3.2.14.RELEASE_1</version>
+            <version>4.2.5.RELEASE_1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-web</artifactId>
-            <version>3.2.14.RELEASE_1</version>
+            <version>4.2.5.RELEASE_1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-webmvc</artifactId>
+            <version>4.2.5.RELEASE_1</version>
         </dependency>
         <dependency>
             <groupId>io.neba</groupId>
             <artifactId>io.neba.neba-api</artifactId>
-            <version>3.7.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>com.springsource.org.hibernate.validator</artifactId>
-            <version>4.2.0.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>com.springsource.javax.validation</artifactId>
-            <version>1.0.0.GA</version>
+            <version>4.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.eventadmin</artifactId>
             <version>1.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.2.4.Final</version>
         </dependency>
     </dependencies>
 
@@ -99,18 +117,26 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.5.0</version>
+                <version>3.0.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Sling-Initial-Content>
                             SLING-INF/content/text;overwrite:=true;path:=/content,
-                            SLING-INF/content/binary;overwrite:=false;path:=/content/adaptto,
-                            SLING-INF/content/views;overwrite:=true;path:=/apps/adaptto
+                            SLING-INF/content/binary;overwrite:=false;path:=/content/neba-sample,
+                            SLING-INF/content/views;overwrite:=true;path:=/apps/neba-sample,
+                            SLING-INF/content/dictionaries;overwrite:=true;path:=/apps/neba-sample
                         </Sling-Initial-Content>
                         <Sling-Bundle-Resources>
-                            /adaptto/static/;path:=/SLING-INF/static-resources/
+                            /neba-sample/static/;path:=/SLING-INF/static-resources/
                         </Sling-Bundle-Resources>
+                        <Import-Package>
+                            org.apache.sling.event.jobs;version="[1,3)",
+                            org.springframework.validation.beanvalidation,
+                            org.springframework.context,
+                            org.hibernate.validator,
+                            *
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -119,16 +145,13 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>maven-sling-plugin</artifactId>
-                <version>2.1.0</version>
-                <configuration>
-                    <slingUrl>http://${sling.host}:${sling.port}/system/console</slingUrl>
-                </configuration>
+                <version>2.1.8</version>
             </plugin>
             <!-- Generates Service Component Runtime (SCR) metadata for @components contained in the bundle -->
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-scr-plugin</artifactId>
-                <version>1.19.0</version>
+                <version>1.21.0</version>
                 <executions>
                     <execution>
                         <id>generate-scr-scrdescriptor</id>
@@ -143,9 +166,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <compilerVersion>1.7</compilerVersion>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <compilerVersion>1.8</compilerVersion>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>

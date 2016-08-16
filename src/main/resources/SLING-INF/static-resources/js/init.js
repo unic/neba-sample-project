@@ -9,13 +9,13 @@
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			global:		{ range: '*', href: '/adaptto/static/css/style.css', containers: '51em', grid: { gutters: 30 } },
-			wide:		{ range: '-1680', href: '/adaptto/static/css/style-wide.css' },
-			normal:		{ range: '-1280', href: '/adaptto/static/css/style-normal.css', containers: '48em' },
-			narrow:		{ range: '-980', href: '/adaptto/static/css/style-narrow.css', containers: '95%', grid: { gutters: 30 } },
-			narrower:	{ range: '-840', href: '/adaptto/static/css/style-narrower.css', containers: '95%!', grid: { gutters: 20 } },
-			mobile:		{ range: '-736', href: '/adaptto/static/css/style-mobile.css', containers: '90%!', grid: { gutters: 20 }, viewport: { scalable: false } },
-			mobilep:	{ range: '-480', href: '/adaptto/static/css/style-mobilep.css', containers: '100%!' }
+			global:		{ range: '*', href: '/neba-sample/static/css/style.css', containers: '51em', grid: { gutters: 30 } },
+			wide:		{ range: '-1680', href: '/neba-sample/static/css/style-wide.css' },
+			normal:		{ range: '-1280', href: '/neba-sample/static/css/style-normal.css', containers: '48em' },
+			narrow:		{ range: '-980', href: '/neba-sample/static/css/style-narrow.css', containers: '95%', grid: { gutters: 30 } },
+			narrower:	{ range: '-840', href: '/neba-sample/static/css/style-narrower.css', containers: '95%!', grid: { gutters: 20 } },
+			mobile:		{ range: '-736', href: '/neba-sample/static/css/style-mobile.css', containers: '90%!', grid: { gutters: 20 }, viewport: { scalable: false } },
+			mobilep:	{ range: '-480', href: '/neba-sample/static/css/style-mobilep.css', containers: '100%!' }
 		}
 	});
 

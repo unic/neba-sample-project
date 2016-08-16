@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author Olaf Otto
  */
-@ResourceModel(types = "adaptto/components/section")
+@ResourceModel(types = "neba-sample/components/section")
 public class Section implements Invalidatable {
     @Path("..")
     @Children

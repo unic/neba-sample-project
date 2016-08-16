@@ -3,6 +3,7 @@ package to.adapt.neba.impl.content;
 import io.neba.api.annotations.Path;
 import io.neba.api.annotations.Reference;
 import io.neba.api.annotations.ResourceModel;
+import io.neba.api.resourcemodels.Optional;
 import org.apache.sling.api.resource.Resource;
 import to.adapt.neba.impl.invalidation.Invalidatable;
 
@@ -13,20 +14,24 @@ import static java.util.Collections.singletonList;
 /**
  * @author Olaf Otto
  */
-@ResourceModel(types = "adaptto/components/header")
+@ResourceModel(types = "neba-sample/components/header")
 public class Header implements Invalidatable {
-    private String title;
+    private String title, text;
 
     @Reference
     @Path("link")
-    private Page page;
+    private Optional<Page> page;
 
     public String getTitle() {
         return title;
     }
 
+    public String getText() {
+        return text;
+    }
+
     @Override
     public Collection<Resource> getResources() {
-        return singletonList(page.getResource());
+        return singletonList(page.get().getResource());
     }
 }

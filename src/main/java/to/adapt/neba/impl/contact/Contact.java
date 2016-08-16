@@ -1,34 +1,42 @@
 package to.adapt.neba.impl.contact;
 
-import io.neba.api.annotations.Path;
-import io.neba.api.annotations.ResourceModel;
-import io.neba.api.annotations.Unmapped;
-import to.adapt.neba.impl.content.Page;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This is both a resource model and serves as a {@link org.springframework.web.bind.annotation.ModelAttribute} in a spring
- * {@link org.springframework.stereotype.Controller}.
- *
  * @author Olaf Otto
  */
-@ResourceModel(types = "adaptto/components/contact")
 public class Contact {
-    @Unmapped
-    private String name, email, message;
+    @NotBlank
+    private String name;
 
-    @Path("..")
-    private Page page;
+    @Email @NotBlank
+    private String email;
+
+    @NotBlank
+    private String message;
 
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
         map.put("name", name);
         map.put("email", email);
         map.put("message", message);
-        map.put("page", page.getPath());
         return map;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMessage() {
+        return message;
     }
 
     public void setName(String name) {

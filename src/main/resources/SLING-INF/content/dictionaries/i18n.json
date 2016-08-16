@@ -1,0 +1,55 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "en" : {
+    "jcr:primaryType": "nt:folder",
+    "jcr:mixinTypes" : ["mix:language"],
+    "jcr:language" : "en",
+
+    "label_name": {
+      "jcr:primaryType": "sling:MessageEntry",
+      "sling:key" : "label_name",
+      "sling:message": "Name"
+    },
+    "label_email": {
+      "jcr:primaryType": "sling:MessageEntry",
+      "sling:key" : "label_email",
+      "sling:message": "Email"
+    },
+    "label_message": {
+      "jcr:primaryType": "sling:MessageEntry",
+      "sling:key" : "label_message",
+      "sling:message": "Message"
+    },
+    "label_send_message": {
+      "jcr:primaryType": "sling:MessageEntry",
+      "sling:key" : "label_send_message",
+      "sling:message": "Send message"
+    },
+    "validation_notBlank": {
+      "jcr:primaryType": "sling:MessageEntry",
+      "sling:key" : "NotBlank",
+      "sling:message": "Must not be empty"
+    },
+    "validation_invalidEmail": {
+      "jcr:primaryType": "sling:MessageEntry",
+      "sling:key" : "Email",
+      "sling:message": "Not a valid email address"
+    }
+  },
+  "fr_FR" : {
+    "jcr:primaryType": "nt:folder",
+    "jcr:mixinTypes" : ["mix:language"],
+    "jcr:language" : "fr-FR"
+  },
+  "de_DE" : {
+    "jcr:primaryType": "nt:folder",
+    "jcr:mixinTypes" : ["mix:language"],
+    "jcr:language" : "de-DE"
+  },
+  "hi_IN" : {
+    "jcr:primaryType": "nt:folder",
+    "jcr:mixinTypes" : ["mix:language"],
+    "jcr:language" : "hi-IN"
+
+  }
+}

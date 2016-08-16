@@ -11,31 +11,27 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="/adaptto/static/css/ie/html5shiv.js"></script><![endif]-->
-    <script src="/adaptto/static/js/jquery.min.js"></script>
-    <script src="/adaptto/static/js/skel.min.js"></script>
-    <script src="/adaptto/static/js/init.js"></script>
-    <script src="/adaptto/static/js/jquery.blockUI.js"></script>
-    <script src="/adaptto/static/js/loginlogout.js" async></script>
-    <script src="/adaptto/static/js/forms.js" async></script>
-    <script src="/adaptto/static/js/contact.js" async></script>
+    <!--[if lte IE 8]><script src="/neba-sample/static/css/ie/html5shiv.js"></script><![endif]-->
+    <script src="/neba-sample/static/js/jquery.min.js"></script>
+    <script src="/neba-sample/static/js/skel.min.js"></script>
+    <script src="/neba-sample/static/js/init.js"></script>
+    <script src="/neba-sample/static/js/jquery.blockUI.js"></script>
+    <script src="/neba-sample/static/js/contact.js" async></script>
     <noscript>
-        <link rel="stylesheet" href="/adaptto/static/css/skel.css" />
-        <link rel="stylesheet" href="/adaptto/static/css/style.css" />
-        <link rel="stylesheet" href="/adaptto/static/css/style-wide.css" />
+        <link rel="stylesheet" href="/neba-sample/static/css/skel.css" />
+        <link rel="stylesheet" href="/neba-sample/static/css/style.css" />
+        <link rel="stylesheet" href="/neba-sample/static/css/style-wide.css" />
     </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="/adaptto/static/css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="/neba-sample/static/css/ie/v8.css" /><![endif]-->
 </head>
 <body>
 
-<%@include file="topbar.jspf"%>
-
-<sling:include path="header" resourceType="adaptto/components/header" />
+<sling:include path="header" resourceType="neba-sample/components/header" />
 
 <!-- Main -->
 <div id="main">
 
-    <sling:include path="major" resourceType="adaptto/components/major" />
+    <sling:include path="major" resourceType="neba-sample/components/major" />
 
     <div class="box alt container">
         <sling:getResource base="${resource}" path="sections" var="sections" />
@@ -45,16 +41,16 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         </c:forEach>
     </div>
 
-    <sling:include path="footer" resourceType="adaptto/components/footer" />
+    <sling:include path="footer" resourceType="neba-sample/components/footer" />
 </div>
 
 <!-- Footer -->
 <div id="footer">
     <div class="container 75%">
 
-        <sling:include path="lastMajor" resourceType="adaptto/components/major" addSelectors="last"/>
+        <sling:include path="lastMajor" resourceType="neba-sample/components/major" addSelectors="last"/>
 
-        <sling:include path="contact" resourceType="adaptto/components/contact" />
+        <div class="contact-form-placeholder" data-form-path="/bin/mvc.do/contact" ></div>
 
         <ul class="icons">
             <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>

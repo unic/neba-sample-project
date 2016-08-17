@@ -31,11 +31,11 @@ public class ContactController {
     @RequestMapping(method = POST)
     public String add(@Valid Contact contact, BindingResult result) {
         if (result.hasErrors()) {
-            return "neba-sample/components/contact/form";
+            return formView();
         }
 
         jobManager.addJob("neba-sample/contact/request", contact.toMap());
-        return "neba-sample/components/contact/success";
+        return successView();
     }
 
     public @ModelAttribute Contact contact() {
@@ -44,5 +44,9 @@ public class ContactController {
 
     private String formView() {
         return "neba-sample/components/contact/form";
+    }
+
+    private String successView() {
+        return "neba-sample/components/contact/success";
     }
 }

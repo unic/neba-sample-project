@@ -1,9 +1,0 @@
-{
-  "jcr:primaryType": "nt:unstructured",
-  "text": {
-    "type": "textarea"
-  },
-  "successmessage": {
-    "type": "textarea"
-  }
-}

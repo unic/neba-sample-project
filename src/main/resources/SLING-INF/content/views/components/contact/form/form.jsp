@@ -17,6 +17,7 @@
     </div>
     <div class="row">
         <div class="12u">
+            <form:errors path="message" cssClass="error"  />
             <form:textarea path="message" rows="6" placeholder="${message}" />
         </div>
     </div>

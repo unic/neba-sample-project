@@ -1,8 +1,7 @@
 # NEBA Directive: a sample application for the NEBA framework for Apache Sling
 This project demonstrates core concepts and features of the NEBA framework for Sling. 
-It provides a demonstrative mini-CMS application for the beautiful responsive _directive_ template set by [http://html5up.net](http://html5up.net). 
-The application was created as part of a presentation of the 2015 .adaptTo conference in Berlin, Germany and
-is continuously updated to serve as a sample project for NEBA.
+It provides a demonstrative mini WEB application for the beautiful responsive _directive_ template set by [http://html5up.net](http://html5up.net). 
+The application was created as part of a presentation of the 2015 .adaptTo conference in Berlin, Germany and is continuously updated to serve as a sample project for NEBA.
 
 ![NEBA Directive: A sample application for NEBA for Sling](README/intro.png)
 
@@ -10,7 +9,7 @@ is continuously updated to serve as a sample project for NEBA.
 This application demonstrates how NEBA can be used to model resources in Sling and use Spring's MVC features for Apache Sling.
 
 ## What this sample application is _not_ 
-A ready-to-use CMS / web application. It has purely been designed to demonstrate NEBA features.
+A ready-to-use web application. It has purely been designed to demonstrate NEBA features.
  
 ## How to run this application
 1. If you don't have a Sling instance to experiment with, download the Sling 8 Standalone Application from the [official download page](https://sling.apache.org/downloads.cgi). Then, run the standalone jar using JDK 8 - this will install and start sling, e.g. with debugging on port 30303 using 

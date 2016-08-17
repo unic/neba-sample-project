@@ -76,17 +76,17 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
-            <version>4.2.5.RELEASE_1</version>
+            <version>4.2.6.RELEASE_1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-web</artifactId>
-            <version>4.2.5.RELEASE_1</version>
+            <version>4.2.6.RELEASE_1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-webmvc</artifactId>
-            <version>4.2.5.RELEASE_1</version>
+            <version>4.2.6.RELEASE_1</version>
         </dependency>
         <dependency>
             <groupId>io.neba</groupId>

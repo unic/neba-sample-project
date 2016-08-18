@@ -1,4 +1,4 @@
-package to.adapt.neba.impl.invalidation;
+package to.adapt.neba.api.invalidation;
 
 import io.neba.api.annotations.ResourceModel;
 import io.neba.api.annotations.This;

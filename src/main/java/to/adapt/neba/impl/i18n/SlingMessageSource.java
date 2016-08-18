@@ -1,11 +1,10 @@
 package to.adapt.neba.impl.i18n;
 
-import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.i18n.ResourceBundleProvider;
 import org.springframework.context.support.AbstractMessageSource;
 import org.springframework.stereotype.Service;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.Resource;
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -14,10 +13,18 @@ import static org.springframework.context.support.AbstractApplicationContext.MES
 
 /**
  * Demonstrates how to link Spring's message sources to Sling's resource bundle mechanism.
+ *
  * @author Olaf Otto
  */
 @Service(MESSAGE_SOURCE_BEAN_NAME)
 public class SlingMessageSource extends AbstractMessageSource {
+    /**
+     * The {@link ResourceBundleProvider} is a Sling service imported in the
+     * blueprint context.xml.
+     */
+    @Resource
+    private ResourceBundleProvider resourceBundleProvider;
+
     @Override
     protected MessageFormat resolveCode(String code, Locale locale) {
         ResourceBundle resourceBundle = getResourceBundle(locale);
@@ -38,7 +45,6 @@ public class SlingMessageSource extends AbstractMessageSource {
     }
 
     private ResourceBundle getResourceBundle(Locale locale) {
-        SlingHttpServletRequest request = ((SlingHttpServletRequest)((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest());
-        return request.getResourceBundle("", locale);
+        return resourceBundleProvider.getResourceBundle(locale);
     }
 }

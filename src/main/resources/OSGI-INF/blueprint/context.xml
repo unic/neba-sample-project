@@ -4,6 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:bp="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+       xmlns:cm="http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
    http://www.osgi.org/xmlns/blueprint/v1.0.0
@@ -11,13 +12,37 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-4.2.xsd
    http://www.springframework.org/schema/mvc
-   http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+   http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+   http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium
+   http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium/gemini-blueprint-compendium.xsd">
 
-    <context:component-scan base-package="to.adapt.neba.impl" />
+    <!-- Automatically discover spring beans below this package namespace.  -->
+    <context:component-scan base-package="to.adapt.neba"/>
 
-    <mvc:annotation-driven />
+    <!-- Setup the annotation-driven MVC infrastructure  -->
+    <mvc:annotation-driven/>
+
+    <!--
+      Create a singleton instance of the java mail sender, and use an SCR configuration
+      to inject properties into it. For each SCR config key, blueprint attempts to find a suitable setter, e.g.
+      "host" = "setHost(String)".
+
+      The singleton will be updated when the underlying SCR configuration changes, for instance when the
+      .config file for the PID (persistent-id) changes or the configuration is changed in the felix console.
+
+      See also SLING-INF/content/config for the deployed config files.
+    -->
+    <bean class="org.springframework.mail.javamail.JavaMailSenderImpl" id="javaMailSender">
+        <cm:managed-properties persistent-id="io.neba.sample.mail" autowire-on-update="true" />
+    </bean>
 
     <bp:blueprint>
-        <bp:reference interface="org.apache.sling.event.jobs.JobManager" id="jobManager" />
+        <!-- bp:reference: Service consumed by this context -->
+        <bp:reference interface="org.apache.sling.event.jobs.JobManager" id="jobManager"/>
+        <!-- Explicitly filter the available service to make sure only the sling resource bundle provider is imported, not the AEM one. -->
+        <bp:reference interface="org.apache.sling.i18n.ResourceBundleProvider" id="resourceBundleProvider" filter="(component.name=org.apache.sling.i18n.impl.JcrResourceBundleProvider)" />
+
+        <!-- bp:service: Service provided by this context -->
+        <bp:service interface="org.springframework.mail.javamail.JavaMailSender" ref="javaMailSender" />
     </bp:blueprint>
 </beans>

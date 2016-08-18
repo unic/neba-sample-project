@@ -7,6 +7,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventHandler;
+import to.adapt.neba.api.invalidation.Invalidatable;
 
 import static org.apache.sling.api.SlingConstants.PROPERTY_PATH;
 import static org.apache.sling.api.SlingConstants.TOPIC_RESOURCE_CHANGED;
@@ -21,7 +22,7 @@ import static org.osgi.service.event.EventConstants.EVENT_TOPIC;
  * @author Olaf Otto
  */
 @Service
-@Component(immediate = true)
+@Component
 @Properties({
         @Property(name = EVENT_TOPIC, value = TOPIC_RESOURCE_CHANGED),
         @Property(name = EVENT_FILTER, value = "(path=/content/neba-sample/*)")
@@ -46,7 +47,7 @@ public class Invalidator implements EventHandler {
                 return;
             }
 
-            // FIXME: Invalidate something.
+            // TODO: Invalidate something, such as a public cache.
 
         } catch (LoginException e) {
             throw new RuntimeException(e);

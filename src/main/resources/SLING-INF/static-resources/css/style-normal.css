@@ -55,7 +55,7 @@
 
 	#header {
 		background-attachment: scroll,							scroll,							scroll;
-		background-image: url("images/top-1600.svg"), url("images/overlay.png"), url("/content/neba-sample/header/image.png");
+		background-image: url("images/top-1600.svg"), url("images/overlay.png"), url("/content/neba-sample/header/image.jpg");
 		background-size: 1600px 230px,					auto,							cover;
 		padding: 6em 0 12em 0;
 	}

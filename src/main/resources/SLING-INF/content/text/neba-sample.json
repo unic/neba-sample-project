@@ -6,6 +6,7 @@
     "sling:resourceType": "neba-sample/components/header",
     "title": "Hi, this is Directive",
     "text": "A responsive HTML5 + CSS3 site template designed by HTML5 UP and released for free under the Creative Commons license.",
+    "link" : "/content/neba-sample/child"
   },
   "major": {
     "jcr:primaryType": "nt:unstructured",
@@ -53,5 +54,45 @@
   },
   "login": {
     "sling:resourceType": "neba-sample/components/login"
+  },
+  "child": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "neba-sample/components/page",
+    "header": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "neba-sample/components/header",
+      "title": "This is the child page",
+      "text": "This is the child page's text",
+      "link" : "/content/neba-sample"
+    },
+    "major": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "neba-sample/components/major",
+      "text":"We conduct experiments that may or may not seriously break the universe"
+    },
+    "sections": {
+      "section": {
+        "title": "The First Thing",
+        "text": "Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.",
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "neba-sample/components/section"
+      },
+      "section1": {
+        "title": "The Second Thing",
+        "text": "Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.",
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "neba-sample/components/section"
+      }
+    },
+    "footer": {
+      "sling:resourceType": "neba-sample/components/footer",
+      "title": "Get shady with science",
+      "text": "Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus."
+    },
+    "lastMajor": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "neba-sample/components/major",
+      "text":"Questions or comments?"
+    }
   }
 }

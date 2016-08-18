@@ -1,15 +1,17 @@
-package to.adapt.neba.impl.contact;
+package to.adapt.neba.api.contact;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.Serializable;
 
 /**
+ * This model is used by the {@link to.adapt.neba.impl.contact.ContactController} to
+ * back a form and validate the form data.
+ *
  * @author Olaf Otto
  */
-public class Contact {
+public class Contact implements Serializable {
     @NotBlank
     private String name;
 
@@ -18,14 +20,6 @@ public class Contact {
 
     @NotBlank
     private String message;
-
-    public Map<String, Object> toMap() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", name);
-        map.put("email", email);
-        map.put("message", message);
-        return map;
-    }
 
     public String getName() {
         return name;

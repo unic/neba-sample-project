@@ -13,6 +13,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.2.6.RELEASE_1</spring.version>
     </properties>
 
     <repositories>
@@ -74,19 +75,30 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.i18n</artifactId>
+            <version>2.4.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
-            <version>4.2.6.RELEASE_1</version>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context-support</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-web</artifactId>
-            <version>4.2.6.RELEASE_1</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-webmvc</artifactId>
-            <version>4.2.6.RELEASE_1</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>io.neba</groupId>
@@ -108,6 +120,12 @@
             <artifactId>hibernate-validator</artifactId>
             <version>5.2.4.Final</version>
         </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -121,16 +139,20 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Embed-Dependency>mail</Embed-Dependency>
+                        <Embed-Directory>lib</Embed-Directory>
                         <Sling-Initial-Content>
                             SLING-INF/content/text;overwrite:=true;path:=/content,
-                            SLING-INF/content/binary;overwrite:=false;path:=/content/neba-sample,
+                            SLING-INF/content/images;overwrite:=false;path:=/content/neba-sample,
                             SLING-INF/content/views;overwrite:=true;path:=/apps/neba-sample,
-                            SLING-INF/content/dictionaries;overwrite:=true;path:=/apps/neba-sample
+                            SLING-INF/content/dictionaries;overwrite:=true;path:=/apps/neba-sample,
+                            SLING-INF/content/config;overwrite:=false;path:=/apps/neba-sample/install
                         </Sling-Initial-Content>
                         <Sling-Bundle-Resources>
                             /neba-sample/static/;path:=/SLING-INF/static-resources/
                         </Sling-Bundle-Resources>
                         <Import-Package>
+                            !sun.*,
                             org.apache.sling.event.jobs;version="[1,3)",
                             org.springframework.validation.beanvalidation,
                             org.springframework.context,

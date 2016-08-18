@@ -1,4 +1,4 @@
-package to.adapt.neba.impl.invalidation;
+package to.adapt.neba.api.invalidation;
 
 import org.apache.sling.api.resource.Resource;
 

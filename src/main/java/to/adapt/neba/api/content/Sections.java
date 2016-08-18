@@ -1,4 +1,4 @@
-package to.adapt.neba.impl.content;
+package to.adapt.neba.api.content;
 
 import io.neba.api.annotations.Children;
 import io.neba.api.annotations.Path;

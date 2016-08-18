@@ -26,6 +26,9 @@ import static to.adapt.neba.impl.contact.Constants.TOPIC_CONTACT_REQUEST;
 @Controller
 @RequestMapping("/contact")
 public class ContactController {
+    private static final String VIEW_FORM = "neba-sample/components/contact/form";
+    private static final String VIEW_SUCCESS = "neba-sample/components/contact/success";
+
     /**
      * The Job manager is a sling service imported
      * in the blueprint context.xml
@@ -39,7 +42,7 @@ public class ContactController {
      */
     @RequestMapping(method = GET)
     public String load() {
-        return formView();
+        return VIEW_FORM;
     }
 
     /**
@@ -52,7 +55,7 @@ public class ContactController {
     @RequestMapping(method = POST)
     public String add(@Valid Contact contact, BindingResult result) {
         if (result.hasErrors()) {
-            return formView();
+            return VIEW_FORM;
         }
 
         Map<String, Object> payload = new HashMap<>();
@@ -65,7 +68,7 @@ public class ContactController {
          */
         jobManager.addJob(TOPIC_CONTACT_REQUEST, payload);
 
-        return successView();
+        return VIEW_SUCCESS;
     }
 
     /**
@@ -76,11 +79,4 @@ public class ContactController {
         return new Contact();
     }
 
-    private String formView() {
-        return "neba-sample/components/contact/form";
-    }
-
-    private String successView() {
-        return "neba-sample/components/contact/success";
-    }
 }

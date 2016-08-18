@@ -26,6 +26,12 @@ import static to.adapt.neba.impl.contact.Constants.TOPIC_CONTACT_REQUEST;
 @Controller
 @RequestMapping("/contact")
 public class ContactController {
+    /**
+     * In addition to the various options for creating controller responses provided by Spring,
+     * NEBA allows using sling resource types as views. It resolves the corresponding script
+     *  - e.g. /apps/neba-sample/components/contact/form/form.jsp - and uses it to render
+     *  the controller response.
+     */
     private static final String VIEW_FORM = "neba-sample/components/contact/form";
     private static final String VIEW_SUCCESS = "neba-sample/components/contact/success";
 

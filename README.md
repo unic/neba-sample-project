@@ -18,6 +18,6 @@ A ready-to-use web application. It has purely been designed to demonstrate NEBA 
 2. Install the NEBA Sling delivery bundle from [http://neba.io/download.html](http://neba.io/download.html), install and activate it.  
 3. Install the thirdparty bundles used by the sample application. For convenience, they are placed in the folder "thirdparties". 
 4. Run `mvn install sling:install` - this will install the application to a sling instance at localhost:8080
-5. Open [http://localhost:8080/neba-sample.html](http://localhost:8080/neba-sample.html).
+5. Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html).
 6. You may login with any sling user, e.g. using admin/admin for the default administrative account.
 7. To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender". 

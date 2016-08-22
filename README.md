@@ -20,4 +20,14 @@ A ready-to-use web application. It has purely been designed to demonstrate NEBA 
 4. Run `mvn install sling:install` - this will install the application to a sling instance at localhost:8080
 5. Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html).
 6. You may login with any sling user, e.g. using admin/admin for the default administrative account.
-7. To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender". 
+7. To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender".
+ 
+## The anatomy of this app
+The NEBA sample app is an OSGi bundle. It contains application code (Java POJOs, Services annotated with SCR metadata, NEBA models) in the "to.adapt.neba" package.
+
+The bundle is [blueprint-enabled](http://www.eclipse.org/gemini/blueprint/) as it provides a blueprint context xml file in OSGI-INF/blueprint.
+
+In addition, the bundle provides JCR content, views, images and configurations via [Sling content loading](https://sling.apache.org/documentation/bundles/content-loading-jcr-contentloader.html).
+The respective content is contained in the SLING-INF/content folder and is loaded into the repository as specified by the `Sling-Initial-Content` header values defined in the pom.xml.
+
+Furthermore, the bundle directly [provides static resources](https://sling.apache.org/documentation/bundles/bundle-resources-extensions-bundleresource.html) via the `Sling-Bundle-Resources` header value defined in the pom.xml. 

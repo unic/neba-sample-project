@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.neba</groupId>
+	<artifactId>io.neba.sample-launchpad</artifactId>
+	<version>2.0.0</version>
+	<name>Neba Sample Launchpad</name>
+	<description>The Neba Launchpad module</description>
+	<packaging>slingstart</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>slingstart-maven-plugin</artifactId>
+				<version>1.4.4</version>
+				<extensions>true</extensions>
+				<configuration>
+					<!-- Start command: mvn slingstart:start -Dlaunchpad.keep.running=true -->
+					<servers>
+						<server>
+							<port>8080</port>
+						</server>
+					</servers>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

@@ -3,7 +3,7 @@
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-project</artifactId>
     <name>NEBA sample project</name>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <packaging>bundle</packaging>
 
     <description>
@@ -13,7 +13,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.2.6.RELEASE_1</spring.version>
+        <spring.version>4.2.8.RELEASE_1</spring.version>
     </properties>
 
     <repositories>
@@ -103,7 +103,7 @@
         <dependency>
             <groupId>io.neba</groupId>
             <artifactId>io.neba.neba-api</artifactId>
-            <version>4.0.0</version>
+            <version>4.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>

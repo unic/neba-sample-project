@@ -20,9 +20,9 @@ public class Section implements Invalidatable {
      * to specify a relative path to refer to a resource in the content tree.
      *
      * NEBA will navigate to the parent node
-     * (@{@link Path}("..")), then select the child (@{@link Children})
+     * (@{@link Path}("..")), then select the children (@{@link Children})
      * and finally provide them as a list of resources. Note that NEBA
-     * automatically provides such collections as lazy-loading
+     * automatically provides such collections as lazy-loading proxies.
      */
     @Path("..")
     @Children

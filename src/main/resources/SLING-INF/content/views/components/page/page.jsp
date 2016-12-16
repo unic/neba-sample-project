@@ -53,15 +53,12 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
         <div class="contact-form-placeholder" data-form-path="/bin/mvc.do/contact" ></div>
 
         <ul class="icons">
-            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+            <li><a href="https://twitter.com/nebaframework" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="https://www.github.com/unic/neba" class="icon fa-github"><span class="label">Github</span></a></li>
         </ul>
 
         <ul class="copyright">
-            <li>&copy; Sling @ Java-Magazin. License: Creative Commons</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li>&copy; neba.io. License: Creative Commons</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
 
     </div>

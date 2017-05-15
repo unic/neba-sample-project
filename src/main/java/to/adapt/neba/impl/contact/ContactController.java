@@ -1,13 +1,13 @@
 package to.adapt.neba.impl.contact;
 
 import org.apache.sling.event.jobs.JobManager;
+import org.eclipse.gemini.blueprint.extensions.annotation.ServiceReference;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import to.adapt.neba.api.contact.Contact;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +39,7 @@ public class ContactController {
      * The Job manager is a sling service imported
      * in the blueprint context.xml
      */
-    @Resource
+    @ServiceReference
     private JobManager jobManager;
 
     /**

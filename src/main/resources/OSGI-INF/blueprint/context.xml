@@ -6,13 +6,13 @@
        xmlns:bp="http://www.osgi.org/xmlns/blueprint/v1.0.0"
        xmlns:cm="http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
    http://www.osgi.org/xmlns/blueprint/v1.0.0
    http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
    http://www.springframework.org/schema/context
-   http://www.springframework.org/schema/context/spring-context-4.2.xsd
+   http://www.springframework.org/schema/context/spring-context-4.3.xsd
    http://www.springframework.org/schema/mvc
-   http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+   http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
    http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium
    http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium/gemini-blueprint-compendium.xsd">
 
@@ -37,11 +37,6 @@
     </bean>
 
     <bp:blueprint>
-        <!-- bp:reference: Service consumed by this context -->
-        <bp:reference interface="org.apache.sling.event.jobs.JobManager" id="jobManager"/>
-        <!-- Explicitly filter the available service to make sure only the sling resource bundle provider is imported, not the AEM one. -->
-        <bp:reference interface="org.apache.sling.i18n.ResourceBundleProvider" id="resourceBundleProvider" filter="(component.name=org.apache.sling.i18n.impl.JcrResourceBundleProvider)" />
-
         <!-- bp:service: Service provided by this context -->
         <bp:service interface="org.springframework.mail.javamail.JavaMailSender" ref="javaMailSender" />
     </bp:blueprint>

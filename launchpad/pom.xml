@@ -4,7 +4,7 @@
 
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-launchpad</artifactId>
-    <version>2.0.0</version>
+    <version>2.2.0</version>
     <name>Neba Sample Launchpad</name>
     <description>The Neba Launchpad module</description>
     <packaging>slingstart</packaging>
@@ -14,10 +14,11 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingstart-maven-plugin</artifactId>
-                <version>1.4.4</version>
+                <version>1.7.6</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <!-- Start command: mvn slingstart:start -Dlaunchpad.keep.running=true -->
+                    <shouldBlockUntilKeyIsPressed>true</shouldBlockUntilKeyIsPressed>
+                    <!-- Start command: mvn slingstart:start -->
                     <servers>
                         <server>
                             <port>8080</port>

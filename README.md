@@ -14,7 +14,7 @@ A ready-to-use web application. It has purely been designed to demonstrate NEBA 
 ## How to run this application
 1. Build the Neba Sample bundle in the root directory with `mvn install`
 2. Build the Neba Sample Launchpad in the launchpad directory with `mvn install`
-3. Start your Neba Sample Launchpad in the launchpad directory with `mvn slingstart:start -Dlaunchpad.keep.running=true` (Can be stopped again with pressing Ctrl-C)
+3. Start your Neba Sample Launchpad in the launchpad directory with `mvn slingstart:start` (Can be stopped again by pressing any key)
 5. Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html).
 6. You may login with any sling user, e.g. using admin/admin for the default administrative account.
 7. To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender".

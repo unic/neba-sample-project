@@ -10,7 +10,7 @@
 
     That is, this view is part of a resource (in a REST sense) that a Spring controller is responsible for.
 --%>
-<form:form action="/bin/mvc.do/contact" method="post" id="contact" commandName="contact">
+<form:form action="/bin/mvc.do/contact" method="post" id="contact" modelAttribute="contact">
     <div class="row">
         <div class="6u 12u(mobilep)">
             <form:errors path="name" cssClass="error"  />

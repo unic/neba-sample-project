@@ -3,7 +3,7 @@ package to.adapt.neba.api.content;
 import io.neba.api.annotations.Path;
 import io.neba.api.annotations.Reference;
 import io.neba.api.annotations.ResourceModel;
-import io.neba.api.resourcemodels.Optional;
+import io.neba.api.resourcemodels.Lazy;
 import org.apache.sling.api.resource.Resource;
 import to.adapt.neba.api.invalidation.Invalidatable;
 
@@ -31,20 +31,20 @@ public class Header implements Invalidatable {
      * may contain a path pointing to another page., i.e. a reference to
      * another piece of content. This is expressed with the
      * {@link Reference} annotation.
-     * Finally, using {@link Optional} makes sure this 1:1 relationship is
+     * Finally, using {@link Lazy} makes sure this 1:1 relationship is
      * lazy-loaded.
      *
-     * When requested, e.g. using {@link Optional#get()}, NEBA will resolve the path contained in
+     * When requested, e.g. using {@link Lazy#get()}, NEBA will resolve the path contained in
      * the property "link", and, if the path resolves to a resource, adapt the resolved resource
      * to {@link Page}.
      */
     @Reference
     @Path("link")
-    private Optional<Page> page;
+    private Lazy<Page> page;
 
     @Override
     public Collection<Resource> getResources() {
-        return page.isPresent() ? singletonList(page.get().getResource()) : emptyList();
+        return page.map(p -> singletonList(p.getResource())).orElse(emptyList());
     }
 
     public Page getLinkedPage() {

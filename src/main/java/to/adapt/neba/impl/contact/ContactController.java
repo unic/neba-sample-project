@@ -37,7 +37,7 @@ public class ContactController {
 
     /**
      * The Job manager is a sling service imported
-     * in the blueprint context.xml
+     * from the OSGi service registry.
      */
     @ServiceReference
     private JobManager jobManager;

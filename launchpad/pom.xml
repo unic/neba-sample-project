@@ -18,6 +18,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <shouldBlockUntilKeyIsPressed>true</shouldBlockUntilKeyIsPressed>
+                    <debug>true</debug>
                     <!-- Start command: mvn slingstart:start -->
                     <servers>
                         <server>

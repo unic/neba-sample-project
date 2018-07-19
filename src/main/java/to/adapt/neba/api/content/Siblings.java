@@ -19,8 +19,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * (@{@link Path}("..")), then select the children (@{@link Children})
  * and finally provide them as a list of resources. Note that NEBA
  * automatically provides such collections as lazy-loading proxies.
-
- * @author Olaf Otto
  */
 @Path("..")
 @Children

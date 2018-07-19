@@ -20,8 +20,6 @@ import static to.adapt.neba.impl.contact.Constants.TOPIC_CONTACT_REQUEST;
 /**
  * Demonstrates how Spring MVC, Spring data binding
  * and Spring's validation support and Sling cooperate when using NEBA.
- *
- * @author Olaf Otto
  */
 @Controller
 @RequestMapping("/contact")

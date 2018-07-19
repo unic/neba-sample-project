@@ -15,7 +15,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     <script src="/neba-sample/static/js/jquery.min.js"></script>
     <script src="/neba-sample/static/js/skel.min.js"></script>
     <script src="/neba-sample/static/js/init.js"></script>
-    <script src="/neba-sample/static/js/jquery.blockUI.js"></script>
     <script src="/neba-sample/static/js/contact.js" async></script>
     <noscript>
         <link rel="stylesheet" href="/neba-sample/static/css/skel.css" />

@@ -13,8 +13,6 @@ import static org.springframework.context.support.AbstractApplicationContext.MES
 
 /**
  * Demonstrates how to link Spring's message sources to Sling's resource bundle mechanism.
- *
- * @author Olaf Otto
  */
 @Service(MESSAGE_SOURCE_BEAN_NAME)
 public class SlingMessageSource extends AbstractMessageSource {

@@ -4,7 +4,7 @@
 
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-launchpad</artifactId>
-    <version>2.2.0</version>
+    <version>5.0.0</version>
     <name>Neba Sample Launchpad</name>
     <description>The Neba Launchpad module</description>
     <packaging>slingstart</packaging>
@@ -14,7 +14,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingstart-maven-plugin</artifactId>
-                <version>1.7.6</version>
+                <version>1.8.2</version>
                 <extensions>true</extensions>
                 <configuration>
                     <shouldBlockUntilKeyIsPressed>true</shouldBlockUntilKeyIsPressed>
@@ -29,7 +29,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.7.0</version>
                 <configuration>
                     <compilerVersion>1.8</compilerVersion>
                     <source>1.8</source>
@@ -38,7 +38,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.7</version>
+                <version>3.1.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
@@ -46,7 +46,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18.1</version>
+                <version>2.22.0</version>
             </plugin>
             <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>

@@ -1,7 +1,6 @@
 # NEBA Directive: a sample application for the NEBA framework for Apache Sling
 This project demonstrates core concepts and features of the NEBA framework for Sling. 
-It provides a demonstrative mini WEB application for the beautiful responsive _directive_ template set by [http://html5up.net](http://html5up.net). 
-The application was created as part of a presentation of the 2015 .adaptTo conference in Berlin, Germany and is continuously updated to serve as a sample project for NEBA.
+It provides a demonstrative mini WEB application for the beautiful responsive _directive_ template set by [http://html5up.net](http://html5up.net).
 
 ![NEBA Directive: A sample application for NEBA for Sling](README/intro.png)
 
@@ -15,7 +14,8 @@ A ready-to-use web application. It has purely been designed to demonstrate NEBA 
 1. Build the Neba Sample bundle in the root directory with `mvn install`
 2. Build the Neba Sample Launchpad in the launchpad directory with `mvn install`
 3. Start your Neba Sample Launchpad in the launchpad directory with `mvn slingstart:start` (Can be stopped again by pressing any key)
-5. Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html).
+5. Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html) or browse NEBA's 
+   [Model registry](http://localhost:8080/system/console/modelregistry),[Model statistics](http://localhost:8080/system/console/modelstatistics) or examine logfiles using NEBA's [log viewer](http://localhost:8080/system/console/logviewer).
 6. You may login with any sling user, e.g. using admin/admin for the default administrative account.
 7. To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender".
  

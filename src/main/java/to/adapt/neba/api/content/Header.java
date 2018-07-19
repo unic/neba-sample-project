@@ -13,7 +13,7 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 
 /**
- * @author Olaf Otto
+ * Models a page header resource. Demonstrates 1:1 lazy loading using NEBA.
  */
 @ResourceModel(types = "neba-sample/components/header")
 public class Header implements Invalidatable {

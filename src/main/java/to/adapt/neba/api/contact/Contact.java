@@ -8,8 +8,6 @@ import java.io.Serializable;
 /**
  * This model is used by the {@link to.adapt.neba.impl.contact.ContactController} to
  * back a form and validate the form data.
- *
- * @author Olaf Otto
  */
 public class Contact implements Serializable {
     @NotBlank

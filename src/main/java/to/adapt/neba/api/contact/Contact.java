@@ -1,21 +1,20 @@
 package to.adapt.neba.api.contact;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
  * This model is used by the {@link to.adapt.neba.impl.contact.ContactController} to
  * back a form and validate the form data.
- *
- * @author Olaf Otto
  */
 public class Contact implements Serializable {
     @NotBlank
     private String name;
 
-    @Email @NotBlank
+    @Email
+    @NotBlank
     private String email;
 
     @NotBlank

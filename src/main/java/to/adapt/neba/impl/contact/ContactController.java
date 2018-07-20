@@ -20,8 +20,6 @@ import static to.adapt.neba.impl.contact.Constants.TOPIC_CONTACT_REQUEST;
 /**
  * Demonstrates how Spring MVC, Spring data binding
  * and Spring's validation support and Sling cooperate when using NEBA.
- *
- * @author Olaf Otto
  */
 @Controller
 @RequestMapping("/contact")
@@ -37,7 +35,7 @@ public class ContactController {
 
     /**
      * The Job manager is a sling service imported
-     * in the blueprint context.xml
+     * from the OSGi service registry.
      */
     @ServiceReference
     private JobManager jobManager;

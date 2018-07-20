@@ -6,13 +6,13 @@
        xmlns:bp="http://www.osgi.org/xmlns/blueprint/v1.0.0"
        xmlns:cm="http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+   http://www.springframework.org/schema/beans/spring-beans.xsd
    http://www.osgi.org/xmlns/blueprint/v1.0.0
    http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
    http://www.springframework.org/schema/context
-   http://www.springframework.org/schema/context/spring-context-4.3.xsd
+   http://www.springframework.org/schema/context/spring-context.xsd
    http://www.springframework.org/schema/mvc
-   http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+   http://www.springframework.org/schema/mvc/spring-mvc.xsd
    http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium
    http://www.eclipse.org/gemini/blueprint/schema/blueprint-compendium/gemini-blueprint-compendium.xsd">
 
@@ -20,7 +20,7 @@
     <context:component-scan base-package="to.adapt.neba"/>
 
     <!-- Setup the annotation-driven MVC infrastructure  -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven />
 
     <!--
       Create a singleton instance of the java mail sender, and use an SCR configuration

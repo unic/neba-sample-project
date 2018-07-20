@@ -1,13 +1,16 @@
 package to.adapt.neba.api.content;
 
+import io.neba.api.annotations.Children;
+import io.neba.api.annotations.Path;
 import io.neba.api.annotations.ResourceModel;
 import io.neba.api.annotations.This;
 import org.apache.sling.api.resource.Resource;
+import to.adapt.neba.impl.content.Section;
 
 import java.util.List;
 
 /**
- * @author Olaf Otto
+ * Models a page resource types, demonstrates mapping child resources using NEBA.
  */
 @ResourceModel(types = "neba-sample/components/page")
 public class Page {
@@ -25,11 +28,8 @@ public class Page {
     @This
     private Resource resource;
 
-    /**
-     * Demonstrates the support for custom annotations created using meta annotations,
-     * see {@link Sections}.
-     */
-    @Sections
+    @Path("section")
+    @Children
     private List<Section> sections;
 
     public Header getHeader() {

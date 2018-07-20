@@ -1,52 +1,38 @@
 package to.adapt.neba.impl.contact;
 
-import org.apache.felix.scr.annotations.*;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.Designate;
+import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import to.adapt.neba.api.contact.Contact;
 
 import javax.mail.internet.MimeMessage;
-import java.util.Map;
 import java.util.concurrent.ExecutorService;
 
 import static java.util.concurrent.Executors.newSingleThreadExecutor;
 import static org.apache.sling.event.jobs.consumer.JobConsumer.JobResult.ASYNC;
-import static org.apache.sling.event.jobs.consumer.JobConsumer.PROPERTY_TOPICS;
+import static org.slf4j.LoggerFactory.getLogger;
 import static to.adapt.neba.impl.contact.Constants.JOB_PROPERTY_CONTACT;
-import static to.adapt.neba.impl.contact.Constants.TOPIC_CONTACT_REQUEST;
 
 /**
  * Demonstrates how to handle a job for a specific topic. It also demonstrates
  * the best-practice of <em>asynchronous job execution</em>. By default, job execution is synchronous - if a job is created
  * by a synchronous event handler (and event handlers are synchronous by default), any cause - such as a JCR resource creation - will
  * block until the job is completed.
- *
- * @author Olaf Otto
  */
-@Component(metatype = true, label = "NEBA sample project contact email sender")
-@Service
-@Properties({
-        @Property(name = PROPERTY_TOPICS, value = TOPIC_CONTACT_REQUEST, propertyPrivate = true)
-})
+@Component(service = JobConsumer.class)
+@Designate(ocd = ContactEmailSender.Configuration.class)
 public class ContactEmailSender implements JobConsumer {
     private final ExecutorService executorService = newSingleThreadExecutor();
-    private final Logger logger = LoggerFactory.getLogger(getClass());
-
-    @Property(
-            label = "Sender",
-            description = "The email address that shall be used to send contact requests",
-            value = "sender@example.invalid")
-    private static final String PROPERTY_FROM = "mail.from";
-
-    @Property(
-            label = "Recipient",
-            description = "The email address contact requests shall be sent to.",
-            value = "recipient@example.invalid")
-    private static final String PROPERTY_TO = "mail.to";
+    private final Logger logger = getLogger(getClass());
 
     /**
      * The {@link JavaMailSender} is a spring service exposed as an OSGi service
@@ -55,13 +41,11 @@ public class ContactEmailSender implements JobConsumer {
     @Reference
     private JavaMailSender mailSender;
 
-    private String recipient;
-    private String sender;
+    private Configuration config;
 
     @Activate
-    protected void activate(Map<String, Object> properties) {
-        this.recipient = (String) properties.get(PROPERTY_TO);
-        this.sender = (String) properties.get(PROPERTY_FROM);
+    protected void activate(Configuration configuration) {
+        this.config = configuration;
     }
 
     @Override
@@ -75,8 +59,8 @@ public class ContactEmailSender implements JobConsumer {
 
                 MimeMessage message = mailSender.createMimeMessage();
                 MimeMessageHelper helper = new MimeMessageHelper(message);
-                helper.setTo(this.recipient);
-                helper.setFrom(this.sender);
+                helper.setFrom(this.config.mailFrom());
+                helper.setTo(this.config.mailTo());
 
                 helper.setSubject("Contact request from " + contact.getName());
                 helper.setReplyTo(contact.getEmail());
@@ -98,5 +82,20 @@ public class ContactEmailSender implements JobConsumer {
     @Deactivate
     protected void deactivate() {
         executorService.shutdownNow();
+    }
+
+    @ObjectClassDefinition(name = "NEBA sample project contact email sender")
+    public @interface Configuration {
+        @AttributeDefinition(
+                name = "Sender",
+                description = "The email address that shall be used to send contact requests",
+                defaultValue = "sender@example.invalid")
+        String mailFrom();
+
+        @AttributeDefinition(
+                name = "Recipient",
+                description = "The email address contact requests shall be sent to.",
+                defaultValue = "sender@example.invalid")
+        String mailTo();
     }
 }

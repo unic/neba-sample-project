@@ -4,7 +4,7 @@
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-project</artifactId>
     <name>NEBA sample project</name>
-    <version>5.0.0</version>
+    <version>5.0.1</version>
     <packaging>bundle</packaging>
 
     <description>

@@ -1,9 +1,0 @@
-<%@page session="false" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="sling" uri="http://sling.apache.org/taglibs/sling" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib prefix="neba" uri="http://neba.io/1.0" %>
-<sling:defineObjects/>
-<sling:adaptTo adaptable="${resource}" adaptTo="org.apache.sling.api.resource.ValueMap" var="properties"/>
-<neba:defineObjects />

@@ -1,0 +1,8 @@
+<!-- Header -->
+<div id="header" data-sly-use.m="/apps/neba/neba.js">
+    <span class="logo icon fa-paper-plane-o"></span>
+    <h1>${properties.title}</h1>
+    <p>
+        <a data-sly-test="${m.linkedPage}" href="${m.linkedPage.path}.html" title="${m.linkedPage.header.title}" data-sly-text="${properties.text}"></a>
+    </p>
+</div>

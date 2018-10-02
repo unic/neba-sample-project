@@ -1,4 +1,7 @@
-<%@include file="../../../global.jspf" %>
+<%@page session="false" pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
 <spring:message code="label_name" var="name" htmlEscape="true" text="Name"/>
 <spring:message code="label_email" var="email" htmlEscape="true" text="Email"/>
 <spring:message code="label_message" var="message" htmlEscape="true" text="Message"/>

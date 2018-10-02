@@ -1,11 +1,10 @@
-<%@include file="../../global.jspf" %>
 <!DOCTYPE HTML>
 <!--
 Directive by HTML5 UP
 html5up.net | @n33co
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html data-sly-use.m="/apps/neba/neba.js">
 <head>
     <title>${m.header.title}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -25,29 +24,27 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 </head>
 <body>
 
-<sling:include path="header" resourceType="neba-sample/components/header" />
+<sly data-sly-resource="${'header' @ resourceType='neba-sample/components/header'}"></sly>
 
 <!-- Main -->
 <div id="main">
 
-    <sling:include path="major" resourceType="neba-sample/components/major" />
+    <sly data-sly-resource="${'major' @ resourceType='neba-sample/components/major'}"></sly>
 
     <div class="box alt container">
-        <sling:getResource base="${resource}" path="sections" var="sections" />
-        <sling:listChildren resource="${sections}" var="sectionList" />
-        <c:forEach var="section" items="${sectionList}" varStatus="status">
-            <sling:include resource="${section}" replaceSelectors="${status.count % 2 == 0 ? 'left' : 'right'}" />
-        </c:forEach>
+        <sly data-sly-use.sections="${resource.path}/sections" data-sly-list="${sections.listChildren}">
+            <sly data-sly-resource="${item.path @ selectors = itemList.even ? 'left' : 'right'}"></sly>
+        </sly>
     </div>
 
-    <sling:include path="footer" resourceType="neba-sample/components/footer" />
+    <sly data-sly-resource="${'footer' @resourceType='neba-sample/components/footer'}"></sly>
 </div>
 
 <!-- Footer -->
 <div id="footer">
     <div class="container 75%">
 
-        <sling:include path="lastMajor" resourceType="neba-sample/components/major" addSelectors="last"/>
+        <sly data-sly-resource="${'lastMajor' @ resourceType='neba-sample/components/major', selectors = 'last'}"></sly>
 
         <div class="contact-form-placeholder" data-form-path="/bin/mvc.do/contact" ></div>
 

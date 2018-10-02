@@ -17,27 +17,32 @@ import static org.springframework.context.support.AbstractApplicationContext.MES
 @Service(MESSAGE_SOURCE_BEAN_NAME)
 public class SlingMessageSource extends AbstractMessageSource {
     /**
-     * Explicitly filter the available service to make sure only the sling resource bundle provider is imported, not the AEM one.
+     * Explicitly filter the available service to make sure only the sling resource bundle provider is imported, not a custom one, e.g. from Adobe AEM.
      */
     @ServiceReference(filter = "(component.name=org.apache.sling.i18n.impl.JcrResourceBundleProvider)")
     private ResourceBundleProvider resourceBundleProvider;
 
     @Override
     protected MessageFormat resolveCode(String code, Locale locale) {
-        ResourceBundle resourceBundle = getResourceBundle(locale);
-        String resolvedValue = resourceBundle.getString(code);
-        if (code.equals(resolvedValue)) {
+        String resolvedValue = resolveCodeWithoutArguments(code, locale);
+        if (resolvedValue == null) {
             return null;
         }
         return new MessageFormat(resolvedValue, locale);
     }
 
+    /**
+     * Sling's resource bundles fall back to returning the key in case no value could be resolved. The message source
+     * would thus treat the key as a resolved value and not use Spring's own fallback mechanisms, e.g. default texts defined in a view.
+     * Thus, rather than returning the key when a value cannot be resolved, this method returns null.
+     */
     @Override
     protected String resolveCodeWithoutArguments(String code, Locale locale) {
         String resolvedValue = getResourceBundle(locale).getString(code);
         if (code.equals(resolvedValue)) {
             return null;
         }
+
         return resolvedValue;
     }
 

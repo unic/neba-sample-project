@@ -12,7 +12,6 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.slf4j.Logger;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import to.adapt.neba.api.contact.Contact;
 
 import javax.mail.internet.MimeMessage;
 import java.util.concurrent.ExecutorService;

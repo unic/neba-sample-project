@@ -1,4 +1,4 @@
-package to.adapt.neba.api.contact;
+package to.adapt.neba.impl.contact;
 
 
 import javax.validation.constraints.Email;

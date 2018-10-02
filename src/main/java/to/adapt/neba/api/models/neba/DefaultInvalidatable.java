@@ -1,8 +1,9 @@
-package to.adapt.neba.api.invalidation;
+package to.adapt.neba.api.models.neba;
 
 import io.neba.api.annotations.ResourceModel;
 import io.neba.api.annotations.This;
 import org.apache.sling.api.resource.Resource;
+import to.adapt.neba.api.invalidation.Invalidatable;
 
 import java.util.Collection;
 

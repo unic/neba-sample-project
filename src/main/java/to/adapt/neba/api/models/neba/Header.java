@@ -1,4 +1,4 @@
-package to.adapt.neba.api.content;
+package to.adapt.neba.api.models.neba;
 
 import io.neba.api.annotations.Path;
 import io.neba.api.annotations.Reference;

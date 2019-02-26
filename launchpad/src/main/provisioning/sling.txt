@@ -837,8 +837,8 @@ end
 [feature name=neba-sample-project]
 
 [variables]
-	neba-sample.version=5.0.3
-	neba.version=5.0.3
+	neba-sample.version=5.0.4
+	neba.version=5.0.4
 
 [artifacts startLevel=16]
     com.fasterxml.jackson.core/jackson-databind/2.9.4

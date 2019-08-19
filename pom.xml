@@ -4,7 +4,7 @@
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-project</artifactId>
     <name>NEBA sample project</name>
-    <version>5.0.6</version>
+    <version>5.0.7</version>
     <packaging>bundle</packaging>
 
     <description>
@@ -13,7 +13,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.1.4.RELEASE_1</spring.version>
+        <spring.version>5.1.8.RELEASE_1</spring.version>
     </properties>
 
     <repositories>
@@ -113,7 +113,7 @@
         <dependency>
             <groupId>io.neba</groupId>
             <artifactId>io.neba.neba-api</artifactId>
-            <version>5.0.6</version>
+            <version>5.0.7</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -179,7 +179,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>4.2.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -223,12 +223,12 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>maven-sling-plugin</artifactId>
-                <version>2.3.6</version>
+                <version>2.4.2</version>
             </plugin>
 
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>3.8.1</version>
                 <configuration>
                     <compilerVersion>1.8</compilerVersion>
                     <source>1.8</source>
@@ -245,7 +245,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.1</version>
+                <version>2.22.2</version>
             </plugin>
             <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>

@@ -27,4 +27,7 @@ The bundle is [blueprint-enabled](http://www.eclipse.org/gemini/blueprint/) as i
 In addition, the bundle provides JCR content, views, images and configurations via [Sling content loading](https://sling.apache.org/documentation/bundles/content-loading-jcr-contentloader.html).
 The respective content is contained in the SLING-INF/content folder and is loaded into the repository as specified by the `Sling-Initial-Content` header values defined in the pom.xml.
 
-Furthermore, the bundle directly [provides static resources](https://sling.apache.org/documentation/bundles/bundle-resources-extensions-bundleresource.html) via the `Sling-Bundle-Resources` header value defined in the pom.xml. 
+Furthermore, the bundle directly [provides static resources](https://sling.apache.org/documentation/bundles/bundle-resources-extensions-bundleresource.html) via the `Sling-Bundle-Resources` header value defined in the pom.xml.
+
+All Neba models are considered part of the bundles API, since the models are used by views. They are thus located in [to.adapt.neba.api.models](https://github.com/unic/neba-sample-project/tree/master/src/main/java/to/adapt/neba/api/models).
+Here, the package "spring" contains Spring beans used as resource models, whereas "neba" contains standard Neba models as supported out of the box by Neba core. 

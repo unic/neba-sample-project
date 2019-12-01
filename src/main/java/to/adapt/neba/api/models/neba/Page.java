@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Models a page resource types, demonstrates mapping child resources using NEBA.
  */
-@ResourceModel(types = "neba-sample/components/page")
+@ResourceModel("neba-sample/components/page")
 public class Page {
     /**
      * Since this field has a type that cannot be mapped from a resource property,
@@ -33,7 +33,7 @@ public class Page {
      * This collection is automatically lazy-loading, i.e. the sections will be loaded from the repository
      * when a method of the sections collection is invoked.
      */
-    @Path("section")
+    @Path("sections")
     @Children
     private List<Section> sections;
 
@@ -47,5 +47,9 @@ public class Page {
 
     public Resource getResource() {
         return resource;
+    }
+
+    public List<Section> getSections() {
+        return sections;
     }
 }

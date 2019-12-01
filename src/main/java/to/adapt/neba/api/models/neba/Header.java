@@ -1,5 +1,6 @@
 package to.adapt.neba.api.models.neba;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.neba.api.annotations.Path;
 import io.neba.api.annotations.Reference;
 import io.neba.api.annotations.ResourceModel;
@@ -15,7 +16,7 @@ import static java.util.Collections.singletonList;
 /**
  * Models a page header resource. Demonstrates 1:1 lazy loading using NEBA.
  */
-@ResourceModel(types = "neba-sample/components/header")
+@ResourceModel("neba-sample/components/header")
 public class Header implements Invalidatable {
     /**
      * Since this field is neither final or static nor annotated
@@ -33,20 +34,24 @@ public class Header implements Invalidatable {
      * {@link Reference} annotation.
      * Finally, using {@link Lazy} makes sure this 1:1 relationship is
      * lazy-loaded.
-     *
+     * <p>
      * When requested, e.g. using {@link Lazy#get()}, NEBA will resolve the path contained in
      * the property "link", and, if the path resolves to a resource, adapt the resolved resource
      * to {@link Page}.
+     * </p>
      */
     @Reference
     @Path("link")
+    @JsonIgnore
     private Lazy<Page> page;
 
     @Override
+    @JsonIgnore
     public Collection<Resource> getResources() {
         return page.map(p -> singletonList(p.getResource())).orElse(emptyList());
     }
 
+    @JsonIgnore
     public Page getLinkedPage() {
         return page.orElse(null);
     }

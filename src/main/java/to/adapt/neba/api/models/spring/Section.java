@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Component
 @Scope("prototype")
-@ResourceModel(types = "neba-sample/components/section")
+@ResourceModel("neba-sample/components/section")
 public class Section implements Invalidatable {
     /**
      * Demonstrates the support for custom annotations created using meta annotations,

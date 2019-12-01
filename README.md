@@ -18,6 +18,7 @@ A ready-to-use web application. It has purely been designed to demonstrate NEBA 
    [Model registry](http://localhost:8080/system/console/modelregistry),[Model statistics](http://localhost:8080/system/console/modelstatistics) or examine logfiles using NEBA's [log viewer](http://localhost:8080/system/console/logviewer).
 6. You may login with any sling user, e.g. using admin/admin for the default administrative account.
 7. To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender".
+9. You can remote-debug the application via port 8000.
  
 ## The anatomy of this app
 The NEBA sample app is an OSGi bundle. It contains application code (Java POJOs, Services annotated with SCR metadata, NEBA models) in the "to.adapt.neba" package.

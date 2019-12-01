@@ -13,7 +13,7 @@ import static java.util.Collections.singleton;
  * Demonstrates how models for node types at the root of the resource type hierarchy
  * apply to any resource type, unless there is an implementation for a more specific resource type.
  */
-@ResourceModel(types = "nt:base")
+@ResourceModel("nt:base")
 public class DefaultInvalidatable implements Invalidatable {
     @This
     private Resource resource;

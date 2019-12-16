@@ -837,8 +837,8 @@ end
 [feature name=neba-sample-project]
 
 [variables]
-	neba-sample.version=5.1.0
-	neba.version=5.1.0
+	neba-sample.version=5.1.1
+	neba.version=5.1.1
 	jackson.version=2.10.1
 
 [artifacts startLevel=16]

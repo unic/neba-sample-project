@@ -4,7 +4,7 @@
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-project</artifactId>
     <name>NEBA sample project</name>
-    <version>5.1.1</version>
+    <version>5.1.2</version>
     <packaging>bundle</packaging>
 
     <description>
@@ -13,7 +13,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.2.0.RELEASE_1</spring.version>
+        <spring.version>5.2.2.RELEASE_1</spring.version>
     </properties>
 
     <repositories>

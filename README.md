@@ -13,7 +13,7 @@ A ready-to-use web application. It has purely been designed to demonstrate NEBA 
 ## How to run this application
 1. Build the Neba Sample bundle in the root directory with `mvn install`
 2. Build the Neba Sample Launchpad in the launchpad directory with `mvn install`
-3. Start your Neba Sample Launchpad in the launchpad directory with `mvn slingstart:start` (Can be stopped again by pressing any key)
+3. Start your Neba Sample Launchpad in the launchpad directory with `mvn  org.apache.sling:slingstart-maven-plugin:start` (Can be stopped again by pressing any key)
 5. Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html) or browse NEBA's 
    [Model registry](http://localhost:8080/system/console/modelregistry),[Model statistics](http://localhost:8080/system/console/modelstatistics) or examine logfiles using NEBA's [log viewer](http://localhost:8080/system/console/logviewer).
 6. You may login with any sling user, e.g. using admin/admin for the default administrative account.

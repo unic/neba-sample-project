@@ -4,7 +4,7 @@
 
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-launchpad</artifactId>
-    <version>5.1.3</version>
+    <version>5.1.5</version>
     <name>Neba Sample Launchpad</name>
     <description>The Neba Launchpad module</description>
     <packaging>slingstart</packaging>
@@ -18,7 +18,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingstart-maven-plugin</artifactId>
-                <version>1.9.4</version>
+                <version>1.9.12</version>
                 <extensions>true</extensions>
                 <configuration>
                     <shouldBlockUntilKeyIsPressed>true</shouldBlockUntilKeyIsPressed>

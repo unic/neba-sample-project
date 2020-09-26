@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  sling:
+    image: openjdk:8
+    command: bash -c "java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -Xmx256m -jar /app/io.neba.sample-launchpad-5.1.5.jar && tail -f /app/sling/logs/error.log"
+    ports:
+    - "8080:8080"
+    - "8000:8000"
+    volumes:
+    - ./launchpad/target:/app

@@ -11,14 +11,24 @@ This application demonstrates how NEBA can be used to model resources in Sling a
 A ready-to-use web application. It has purely been designed to demonstrate NEBA features.
  
 ## How to run this application
+You can run this app using docker. To build and run it from scratch, use the provided build-and-run script. 
+If the launchpad is already build, you can start the app using
+
+`docker-compose up`
+
+Alternatively, you can use maven to build and run the app, like so:
+
 1. Build the Neba Sample bundle in the root directory with `mvn install`
 2. Build the Neba Sample Launchpad in the launchpad directory with `mvn install`
 3. Start your Neba Sample Launchpad in the launchpad directory with `mvn  org.apache.sling:slingstart-maven-plugin:start` (Can be stopped again by pressing any key)
-5. Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html) or browse NEBA's 
+
+Once the app is up & running, you can for example:
+
+- Open [http://localhost:8080/content/neba-sample.html](http://localhost:8080/content/neba-sample.html) or browse NEBA's 
    [Model registry](http://localhost:8080/system/console/modelregistry),[Model statistics](http://localhost:8080/system/console/modelstatistics) or examine logfiles using NEBA's [log viewer](http://localhost:8080/system/console/logviewer).
-6. You may login with any sling user, e.g. using admin/admin for the default administrative account.
-7. To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender".
-9. You can remote-debug the application via port 8000.
+- login with any sling user, e.g. using admin/admin for the default administrative account.
+- To configure the SMTP settings for the contact form, see /system/console/configMgr, "io.neba.sample.mail" and "NEBA sample project contact email sender".
+- remote-debug the application via port 8000.
  
 ## The anatomy of this app
 The NEBA sample app is an OSGi bundle. It contains application code (Java POJOs, Services annotated with SCR metadata, NEBA models) in the "to.adapt.neba" package.

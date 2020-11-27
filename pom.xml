@@ -115,6 +115,12 @@
             <artifactId>io.neba.neba-api</artifactId>
             <version>5.1.5</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>tld-generator</artifactId>
+                    <groupId>com.google.code.tld-generator</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>

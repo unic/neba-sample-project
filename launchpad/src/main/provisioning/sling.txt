@@ -847,8 +847,8 @@ end
 [feature name=neba-sample-project]
 
 [variables]
-	neba-sample.version=5.1.5
-	neba.version=5.1.5
+	neba-sample.version=5.2.0
+	neba.version=5.2.0
 
 [artifacts startLevel=15]
 	com.fasterxml/classmate/1.5.1

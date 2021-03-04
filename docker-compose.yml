@@ -9,3 +9,8 @@ services:
     - "8000:8000"
     volumes:
     - ./launchpad/target:/app
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - 1025:1025
+      - 8025:8025

@@ -7,4 +7,4 @@ jdk: openjdk8
 
 script: 
  - chmod u+x travis.ch
- - travis.sh
+ - ./travis.sh

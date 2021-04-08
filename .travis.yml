@@ -6,5 +6,5 @@ services:
 jdk: openjdk8
 
 script: 
- - chmod u+x travis.ch
- - ./travis.sh
+ - chmod u+x build-and-run.sh
+ - ./build-and-run.sh

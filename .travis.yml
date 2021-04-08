@@ -5,4 +5,4 @@ services:
 
 jdk: openjdk8
 
-script: .travis.sh
+script: ./travis.sh

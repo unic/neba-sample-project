@@ -1,10 +1,10 @@
 language: java
-sudo: false # faster builds
+sudo: required
 services:
   - docker
 
 jdk: openjdk8
 
 script: 
- - chmod u+x ./travis.ch
+ - chmod u+x travis.ch
  - ./travis.sh

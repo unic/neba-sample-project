@@ -1,4 +1,6 @@
 # NEBA Directive: a sample application for the NEBA framework for Apache Sling
+[![CI workflow](https://github.com/unic/neba-sample-project/actions/workflows/ci.yml/badge.svg)](https://github.com/unic/neba-sample-project/actions/workflows/ci.yml)
+
 This project demonstrates core concepts and features of the NEBA framework for Sling. 
 It provides a demonstrative mini WEB application for the beautiful responsive _directive_ template set by [http://html5up.net](http://html5up.net).
 

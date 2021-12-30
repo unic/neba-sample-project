@@ -24,6 +24,6 @@ jobs:
           architecture: x64
           cache: maven
       - name: prepare CI script flags
-        run: chmod +x ./ci.sh
+        run: chmod +x ./.github/workflows/ci.sh
       - name: run CI script
-        run: ./ci.sh
+        run: ./.github/workflows/ci.sh

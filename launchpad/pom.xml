@@ -4,7 +4,7 @@
 
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-launchpad</artifactId>
-    <version>5.2.0</version>
+    <version>5.2.1</version>
     <name>Neba Sample Launchpad</name>
     <description>The Neba Launchpad module</description>
     <packaging>slingstart</packaging>

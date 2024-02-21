@@ -816,8 +816,8 @@ end
 
 # Add a servlet implementation for the standalone case
 [artifacts startLevel=5 runModes=:standalone]
-  org.apache.felix/org.apache.felix.http.jetty/4.0.18
-  org.apache.felix/org.apache.felix.http.servlet-api/1.1.2
+  org.apache.felix/org.apache.felix.http.jetty/4.2.18
+  org.apache.felix/org.apache.felix.http.servlet-api/1.2.0
 
 #
 # Licensed to the Apache Software Foundation (ASF) under one
@@ -847,8 +847,8 @@ end
 [feature name=neba-sample-project]
 
 [variables]
-	neba-sample.version=5.2.2
-	neba.version=5.2.2
+	neba-sample.version=5.2.3
+	neba.version=5.2.3
 
 [artifacts startLevel=15]
 	com.fasterxml/classmate/1.5.1

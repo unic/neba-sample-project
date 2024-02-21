@@ -4,7 +4,7 @@
     <groupId>io.neba</groupId>
     <artifactId>io.neba.sample-project</artifactId>
     <name>NEBA sample project</name>
-    <version>5.2.2</version>
+    <version>5.2.3</version>
     <packaging>bundle</packaging>
 
     <description>
@@ -113,7 +113,7 @@
         <dependency>
             <groupId>io.neba</groupId>
             <artifactId>io.neba.neba-api</artifactId>
-            <version>5.2.2</version>
+            <version>5.2.3</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
